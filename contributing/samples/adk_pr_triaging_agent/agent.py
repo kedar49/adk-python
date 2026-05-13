@@ -17,6 +17,7 @@ from typing import Any
 
 from adk_pr_triaging_agent.settings import GITHUB_BASE_URL
 from adk_pr_triaging_agent.settings import IS_INTERACTIVE
+from adk_pr_triaging_agent.settings import LLM_MODEL_NAME
 from adk_pr_triaging_agent.settings import OWNER
 from adk_pr_triaging_agent.settings import REPO
 from adk_pr_triaging_agent.utils import error_response
@@ -220,7 +221,7 @@ def add_comment_to_pr(pr_number: int, comment: str) -> dict[str, Any]:
 
 
 root_agent = Agent(
-    model="gemini-2.5-pro",
+    model=LLM_MODEL_NAME,
     name="adk_pr_triaging_assistant",
     description="Triage ADK pull requests.",
     instruction=f"""

@@ -16,6 +16,7 @@ from typing import Any
 
 from adk_triaging_agent.settings import GITHUB_BASE_URL
 from adk_triaging_agent.settings import IS_INTERACTIVE
+from adk_triaging_agent.settings import LLM_MODEL_NAME
 from adk_triaging_agent.settings import OWNER
 from adk_triaging_agent.settings import REPO
 from adk_triaging_agent.utils import error_response
@@ -244,7 +245,7 @@ def change_issue_type(issue_number: int, issue_type: str) -> dict[str, Any]:
 
 
 root_agent = Agent(
-    model="gemini-2.5-pro",
+    model=LLM_MODEL_NAME,
     name="adk_triaging_assistant",
     description="Triage ADK issues.",
     instruction=f"""

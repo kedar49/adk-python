@@ -26,6 +26,7 @@ if not GITHUB_TOKEN:
 
 OWNER = os.getenv("OWNER", "google")
 REPO = os.getenv("REPO", "adk-python")
+LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME", "gemini-2.5-flash")
 EVENT_NAME = os.getenv("EVENT_NAME")
 ISSUE_NUMBER = os.getenv("ISSUE_NUMBER")
 ISSUE_COUNT_TO_PROCESS = os.getenv("ISSUE_COUNT_TO_PROCESS")

@@ -17,6 +17,7 @@ from typing import Any
 
 from adk_issue_formatting_agent.settings import GITHUB_BASE_URL
 from adk_issue_formatting_agent.settings import IS_INTERACTIVE
+from adk_issue_formatting_agent.settings import LLM_MODEL_NAME
 from adk_issue_formatting_agent.settings import OWNER
 from adk_issue_formatting_agent.settings import REPO
 from adk_issue_formatting_agent.utils import error_response
@@ -132,7 +133,7 @@ def list_comments_on_issue(issue_number: int) -> dict[str, any]:
 
 
 root_agent = Agent(
-    model="gemini-2.5-pro",
+    model=LLM_MODEL_NAME,
     name="adk_issue_formatting_assistant",
     description="Check ADK issue format and content.",
     instruction=f"""
